@@ -2,18 +2,24 @@ import styled from "styled-components";
 
 const HeaderContainer = styled.header`
   position: fixed;
-  top: 0;
   width: 100%;
   height: 70px;
-  background-color: white;
+  background-color: transparent;
+  backdrop-filter: blur(15px); // 🎯 핵심
+  -webkit-backdrop-filter: blur(15px);
   z-index: 999;
   display: flex;
   align-items: center;
-  padding-left: 20px;
   box-shadow: 0 1px 8px rgba(0, 0, 0, 0.05);
 `;
 
 const Logo = styled.div`
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: ${({ theme }) => theme.text};
+  transition: color 0.3s ease-in-out;
   font-size: 1.4rem;
   font-weight: bold;
   cursor: pointer;
@@ -21,8 +27,9 @@ const Logo = styled.div`
 
 const Nav = styled.nav`
   display: flex;
-  gap: 1rem;
-  margin-left: 2rem;
+  width: 200px;
+  align-items: center;
+  justify-content: space-around;
 `;
 
 const NavItem = styled.button`
@@ -30,13 +37,15 @@ const NavItem = styled.button`
   border: none;
   font-size: 1rem;
   font-weight: ${({ active }) => (active ? "700" : "400")};
-  color: ${({ active }) => (active ? "#222" : "#888")};
-  border-bottom: ${({ active }) => (active ? "2px solid #333" : "none")};
-  padding-bottom: 2px;
+  color: ${({ active, theme }) => (active ? theme.text : theme.headertext)};
+  border-bottom: ${({ active, theme }) =>
+    active ? `2px solid ${theme.text}` : "none"};
+  transition: all 0.3s ease-in-out;
   cursor: pointer;
 
   &:hover {
-    color: #000;
+    scale: 1.1;
+    transition: all 0.1s ease-in-out;
   }
 `;
 
@@ -47,7 +56,9 @@ const Header = ({ currentSection, sectionRefs }) => {
 
   return (
     <HeaderContainer>
-      <Logo onClick={() => scrollToSection("hero")}>NOWMAKES</Logo>
+      <Logo onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+        NOWMAKES
+      </Logo>
       <Nav>
         <NavItem
           onClick={() => scrollToSection("about")}

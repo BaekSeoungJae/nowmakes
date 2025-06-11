@@ -3,8 +3,9 @@ import styled from "styled-components";
 const FooterWrapper = styled.footer`
   padding: 40px 20px;
   text-align: center;
-  background-color: #222;
-  color: #fff;
+  background-color: ${({ theme }) => theme.footerbg};
+  transition: all 0.3s ease-in-out;
+  color: ${({ theme }) => theme.text};
 `;
 
 const Footer = () => {
