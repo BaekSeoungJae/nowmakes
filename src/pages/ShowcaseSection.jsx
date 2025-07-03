@@ -4,9 +4,15 @@ import FlipCard from "../components/ui/FlipCard";
 
 const Section = styled.section`
   padding: 100px 20px;
+  height: 900px;
   text-align: center;
-  background-color: ${({ theme }) => theme.body};
+  background-color: ${({ theme }) => theme.showcasebg};
   color: ${({ theme }) => theme.text};
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 `;
 
 const CardWrapper = styled.div`
@@ -27,7 +33,7 @@ const ShowcaseSection = ({ toggleTheme }) => {
           desc="PC에선 hover, 모바일에선 tap으로 작동합니다."
         />
         <FlipCard
-          title="다크모드 체험"
+          title="다크모드"
           desc="버튼을 눌러 테마를 전환해보세요!"
           onClick={toggleTheme}
         />

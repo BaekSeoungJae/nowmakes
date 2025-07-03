@@ -21,7 +21,7 @@ const MotionCircle = ({ currentSection }) => {
     switch (currentSection) {
       case "hero":
         return {
-          size: 200,
+          size: 300,
           color: "rgba(255,255,255,1)",
           border: "1px solid rgba(255,255,255,0.2)",
         };
