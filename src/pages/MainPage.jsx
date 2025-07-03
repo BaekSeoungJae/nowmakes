@@ -36,6 +36,7 @@ const ThemeToggle = styled.button`
 
 const MainPage = ({ toggleTheme, isDarkMode }) => {
   const [currentSection, setCurrentSection] = useState("hero");
+  const [hideCursor, setHideCursor] = useState(false);
 
   const heroRef = useRef(null);
   const showcaseRef = useRef(null);
@@ -76,11 +77,14 @@ const MainPage = ({ toggleTheme, isDarkMode }) => {
 
   return (
     <Container>
-      <MotionCircle currentSection={currentSection} />
+      <MotionCircle
+        currentSection={currentSection}
+        style={{ opacity: hideCursor ? 0 : 1 }}
+      />
       <Header currentSection={currentSection} sectionRefs={sectionRefs} />
       <MainWrapper>
         <section id="hero" ref={sectionRefs.hero}>
-          <HeroSection />
+          <HeroSection setHideCursor={setHideCursor} />
         </section>
         <section id="showcase" ref={sectionRefs.showcase}>
           <ShowcaseSection toggleTheme={toggleTheme} />

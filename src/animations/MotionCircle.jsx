@@ -14,14 +14,14 @@ const Circle = styled.div`
   }
 `;
 
-const MotionCircle = ({ currentSection }) => {
+const MotionCircle = ({ currentSection, style }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
   const getCircleStyle = () => {
     switch (currentSection) {
       case "hero":
         return {
-          size: 300,
+          size: 100,
           color: "rgba(255,255,255,1)",
           border: "1px solid rgba(255,255,255,0.2)",
         };
@@ -71,6 +71,7 @@ const MotionCircle = ({ currentSection }) => {
         height: `${size}px`,
         background: color,
         border: border,
+        opacity: style?.opacity ?? 1,
       }}
     />
   );
