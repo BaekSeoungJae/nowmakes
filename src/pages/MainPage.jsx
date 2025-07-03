@@ -1,11 +1,13 @@
 import { useEffect, useState, useRef } from "react";
 import styled from "styled-components";
-import HeroSection from "../components/HeroSection";
-import AboutSection from "../components/AboutSection";
-import SampleSection from "../components/SampleSection";
-import InfoSection from "../components/InfoSection";
+import HeroSection from "./HeroSection";
+import AboutSection from "./AboutSection";
+import SampleSection from "./SampleSection";
+import InfoSection from "./InfoSection";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
+import MotionCircle from "../animations/MotionCircle";
+import ShowcaseSection from "./ShowcaseSection";
 
 const Container = styled.main`
   display: flex;
@@ -31,10 +33,12 @@ const ThemeToggle = styled.button`
   cursor: pointer;
   z-index: 1000;
 `;
+
 const MainPage = ({ toggleTheme, isDarkMode }) => {
   const [currentSection, setCurrentSection] = useState("hero");
 
   const heroRef = useRef(null);
+  const showcaseRef = useRef(null);
   const aboutRef = useRef(null);
   const sampleRef = useRef(null);
   const infoRef = useRef(null);
@@ -42,6 +46,7 @@ const MainPage = ({ toggleTheme, isDarkMode }) => {
 
   const sectionRefs = {
     hero: heroRef,
+    showcase: showcaseRef,
     about: aboutRef,
     sample: sampleRef,
     info: infoRef,
@@ -60,19 +65,25 @@ const MainPage = ({ toggleTheme, isDarkMode }) => {
       { threshold: 0.5 }
     );
 
-    [heroRef, aboutRef, sampleRef, infoRef, footerRef].forEach((ref) => {
-      if (ref.current) observer.observe(ref.current);
-    });
+    [heroRef, showcaseRef, aboutRef, sampleRef, infoRef, footerRef].forEach(
+      (ref) => {
+        if (ref.current) observer.observe(ref.current);
+      }
+    );
 
     return () => observer.disconnect();
   }, []);
 
   return (
     <Container>
+      <MotionCircle currentSection={currentSection} />
       <Header currentSection={currentSection} sectionRefs={sectionRefs} />
       <MainWrapper>
         <section id="hero" ref={sectionRefs.hero}>
           <HeroSection />
+        </section>
+        <section id="showcase" ref={sectionRefs.showcase}>
+          <ShowcaseSection toggleTheme={toggleTheme} />
         </section>
         <section id="about" ref={sectionRefs.about}>
           <AboutSection />
