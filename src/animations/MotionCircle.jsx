@@ -1,4 +1,18 @@
+import styled from "styled-components";
 import { useEffect, useState } from "react";
+
+const Circle = styled.div`
+  position: fixed;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 5;
+  mix-blend-mode: exclusion;
+
+  @media (hover: none) and (pointer: coarse) {
+    display: none;
+  }
+`;
 
 const MotionCircle = ({ currentSection }) => {
   const [position, setPosition] = useState({ x: 0, y: 0 });
@@ -49,20 +63,14 @@ const MotionCircle = ({ currentSection }) => {
   }, []);
 
   return (
-    <div
+    <Circle
       style={{
-        position: "fixed",
         left: `${position.x}px`,
         top: `${position.y}px`,
-        transform: "translate(-50%, -50%)",
         width: `${size}px`,
         height: `${size}px`,
         background: color,
         border: border,
-        borderRadius: "50%",
-        pointerEvents: "none",
-        zIndex: 5,
-        mixBlendMode: "exclusion",
       }}
     />
   );
