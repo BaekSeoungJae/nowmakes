@@ -49,13 +49,16 @@ const NavItem = styled.button`
   }
 `;
 
-const Header = ({ currentSection, sectionRefs }) => {
+const Header = ({ currentSection, sectionRefs, setHideCursor }) => {
   const scrollToSection = (id) => {
     sectionRefs[id]?.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
-    <HeaderContainer>
+    <HeaderContainer
+      onMouseEnter={() => setHideCursor(true)}
+      onMouseLeave={() => setHideCursor(false)}
+    >
       <Logo onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
         NOWMAKES
       </Logo>

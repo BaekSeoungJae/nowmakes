@@ -51,6 +51,9 @@ const Title = styled.h1`
   color: ${({ theme }) => theme.text};
   transition: color 0.3s ease-in-out;
   z-index: 1;
+  @media (max-width: 768px) {
+    font-size: 3.5rem;
+  }
 `;
 
 const FloatingCircle = styled.div`
@@ -121,8 +124,8 @@ const Orbit3 = styled(RotatingWrapper)`
 
 const HeroSection = ({ setHideCursor }) => {
   const colors = [
-    "rgba(255, 255, 255, 1)", // 안정적인 흰색 반전
-    "rgb(79, 206, 191)", // 청록 느낌
+    "rgba(255, 255, 255, 1)",
+    "rgb(79, 206, 191)",
     "rgb(15, 74, 200)",
     "rgb(97, 32, 188)",
     "rgb(222, 179, 86)",
