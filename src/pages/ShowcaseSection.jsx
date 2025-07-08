@@ -3,7 +3,6 @@ import styled from "styled-components";
 import FlipCard from "../components/ui/FlipCard";
 
 const Section = styled.section`
-  padding: 100px 20px;
   height: 900px;
   text-align: center;
   background-color: ${({ theme }) => theme.showcasebg};
@@ -26,7 +25,13 @@ const CardWrapper = styled.div`
 const ShowcaseSection = ({ toggleTheme }) => {
   return (
     <Section>
-      <h2>✨ 기능을 직접 체험해보세요</h2>
+      <h2>
+        내가 원하는 홈페이지를 쉽게 만들고 한눈에 완성하세요.
+        <br />
+        처음이라도 걱정 없는 간편한 제작 경험,
+        <br />
+        nowmakes와 함께라면 시작이 쉬워집니다.
+      </h2>
       <CardWrapper>
         <FlipCard
           title="Hover 인터랙션"
