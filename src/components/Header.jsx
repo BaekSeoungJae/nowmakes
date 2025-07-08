@@ -5,7 +5,7 @@ const HeaderContainer = styled.header`
   width: 100%;
   height: 70px;
   background-color: transparent;
-  backdrop-filter: blur(15px); // 🎯 핵심
+  backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   z-index: 999;
   display: flex;

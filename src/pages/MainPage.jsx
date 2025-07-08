@@ -8,6 +8,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import MotionCircle from "../animations/MotionCircle";
 import ShowcaseSection from "./ShowcaseSection";
+import LeftBar from "../components/LeftBar";
 
 const Container = styled.main`
   display: flex;
@@ -21,22 +22,11 @@ const MainWrapper = styled.main`
   flex-direction: column;
   margin-top: 70px;
 `;
-// const ThemeToggle = styled.button`
-//   position: fixed;
-//   top: 17px;
-//   right: 20px;
-//   padding: 8px 14px;
-//   background-color: transparent;
-//   color: ${({ theme }) => theme.text};
-//   border: 1px solid ${({ theme }) => theme.togglebtn};
-//   transition: all 0.3s ease-in-out;
-//   cursor: pointer;
-//   z-index: 1000;
-// `;
 
-const MainPage = ({ toggleTheme, isDarkMode }) => {
+const MainPage = ({ toggleTheme }) => {
   const [currentSection, setCurrentSection] = useState("hero");
   const [hideCursor, setHideCursor] = useState(false);
+  const [showLeftBar, setShowLeftBar] = useState(false);
 
   const heroRef = useRef(null);
   const showcaseRef = useRef(null);
@@ -75,8 +65,18 @@ const MainPage = ({ toggleTheme, isDarkMode }) => {
     return () => observer.disconnect();
   }, []);
 
+  useEffect(() => {
+    const handleMouseMove = (e) => {
+      setShowLeftBar(e.clientX < 100);
+    };
+
+    window.addEventListener("mousemove", handleMouseMove);
+    return () => window.removeEventListener("mousemove", handleMouseMove);
+  }, []);
+
   return (
     <Container>
+      <LeftBar visible={showLeftBar} />
       <MotionCircle
         currentSection={currentSection}
         style={{ opacity: hideCursor ? 0 : 1 }}
@@ -104,9 +104,6 @@ const MainPage = ({ toggleTheme, isDarkMode }) => {
         </section>
         <Footer />
       </MainWrapper>
-      {/* <ThemeToggle onClick={toggleTheme}>
-        {isDarkMode ? "라이트 모드" : "다크 모드"}
-      </ThemeToggle> */}
     </Container>
   );
 };
