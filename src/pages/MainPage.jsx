@@ -90,11 +90,11 @@ const MainPage = ({ toggleTheme }) => {
         <section id="hero" ref={sectionRefs.hero}>
           <HeroSection setHideCursor={setHideCursor} />
         </section>
-        <section id="showcase" ref={sectionRefs.showcase}>
-          <ShowcaseSection toggleTheme={toggleTheme} />
-        </section>
         <section id="about" ref={sectionRefs.about}>
           <AboutSection />
+        </section>
+        <section id="showcase" ref={sectionRefs.showcase}>
+          <ShowcaseSection toggleTheme={toggleTheme} />
         </section>
         <section id="sample" ref={sectionRefs.sample}>
           <SampleSection />
