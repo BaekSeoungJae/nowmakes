@@ -36,10 +36,10 @@ const NavItem = styled.button`
   background: none;
   border: none;
   font-size: 1rem;
-  font-weight: ${({ active }) => (active ? "700" : "400")};
-  color: ${({ active, theme }) => (active ? theme.text : theme.headertext)};
-  border-bottom: ${({ active, theme }) =>
-    active ? `2px solid ${theme.text}` : "none"};
+  font-weight: ${({ $active }) => ($active ? "700" : "400")};
+  color: ${({ $active, theme }) => ($active ? theme.text : theme.headertext)};
+  border-bottom: ${({ $active, theme }) =>
+    $active ? `2px solid ${theme.text}` : "none"};
   transition: all 0.3s ease-in-out;
   cursor: pointer;
 
@@ -65,19 +65,19 @@ const Header = ({ currentSection, sectionRefs, setHideCursor }) => {
       <Nav>
         <NavItem
           onClick={() => scrollToSection("about")}
-          active={currentSection === "about"}
+          $active={currentSection === "about"}
         >
           소개
         </NavItem>
         <NavItem
           onClick={() => scrollToSection("sample")}
-          active={currentSection === "sample"}
+          $active={currentSection === "sample"}
         >
           샘플
         </NavItem>
         <NavItem
           onClick={() => scrollToSection("info")}
-          active={currentSection === "info"}
+          $active={currentSection === "info"}
         >
           서비스
         </NavItem>

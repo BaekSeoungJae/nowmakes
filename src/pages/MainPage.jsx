@@ -76,7 +76,7 @@ const MainPage = ({ toggleTheme }) => {
 
   return (
     <Container>
-      <LeftBar visible={showLeftBar} />
+      <LeftBar $visible={showLeftBar} />
       <MotionCircle
         currentSection={currentSection}
         style={{ opacity: hideCursor ? 0 : 1 }}
