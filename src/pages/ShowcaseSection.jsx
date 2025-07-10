@@ -1,4 +1,3 @@
-import React from "react";
 import styled from "styled-components";
 import FlipCard from "../components/ui/FlipCard";
 
@@ -17,7 +16,7 @@ const Section = styled.section`
 const CardWrapper = styled.div`
   display: flex;
   justify-content: center;
-  flex-wrap: wrap; /* 반응형 대응 */
+  flex-wrap: wrap;
   margin-top: 50px;
   gap: 1rem;
 `;
