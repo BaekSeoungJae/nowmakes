@@ -46,7 +46,7 @@ const HeroSection = ({ setHideCursor }) => {
     const isMobile = typeof window !== "undefined" && window.innerWidth <= 768;
     return isMobile
       ? { count: 8, minSize: 50, maxSize: 80 }
-      : { count: 12, minSize: 50, maxSize: 90 };
+      : { count: 10, minSize: 50, maxSize: 90 };
   }, []);
 
   const colors = [
