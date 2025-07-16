@@ -9,7 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Wrapper = styled.section`
   width: 100%;
-  height: 160vh; /* 충분한 스크롤 공간 확보 */
+  height: 160vh;
   position: relative;
   background: transparent;
 `;
