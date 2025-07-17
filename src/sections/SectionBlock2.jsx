@@ -69,8 +69,8 @@ const SectionBlock2 = () => {
     <Wrapper>
       <FixedImage imageurl={body01} />
       <TextBox ref={textRef}>
-        애플, 삼성, 스타벅스, 구글…\n 우리가 아는 브랜드는 모두\n 홈페이지를
-        갖고 있습니다.
+        애플, 삼성, 스타벅스, 구글… 우리가 아는 브랜드는 모두 홈페이지를 갖고
+        있습니다.
       </TextBox>
     </Wrapper>
   );
