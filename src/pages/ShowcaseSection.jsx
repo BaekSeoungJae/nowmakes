@@ -43,7 +43,7 @@ const ShowcaseSection = ({ toggleTheme }) => {
         />
         <FlipCard
           title="폰트 바꾸기"
-          desc="클릭 한 번으로 폰트를 바꿀 수 있어요!"
+          desc="클릭 한 번으로 폰트를 바꿀 수 있어요."
         />
       </CardWrapper>
     </Section>
