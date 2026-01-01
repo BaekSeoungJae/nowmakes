@@ -1,25 +1,27 @@
+// AboutSection.jsx
 import styled from "styled-components";
-
+import SectionBlock1 from "../sections/SectionBlock1";
+import SectionBlock2 from "../sections/SectionBlock2";
+import SectionBlock3 from "../sections/SectionBlock3";
+import SectionBlock4 from "../sections/SectionBlock4";
+import SectionBlock5 from "../sections/SectionBlock5";
+import SectionBlock6 from "../sections/SectionBlock6";
 const Section = styled.section`
   width: 100%;
-  height: 900px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   background-color: ${({ theme }) => theme.aboutbg};
-  transition: background-color 0.3s ease-in-out;
-`;
-
-const Heading = styled.h2`
-  font-size: 2rem;
-  color: ${({ theme }) => theme.text};
-  transition: color 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
 `;
 
 const AboutSection = () => {
   return (
     <Section>
-      <Heading>About NOWMAKES</Heading>
+      <SectionBlock1 />
+      <SectionBlock2 />
+      <SectionBlock3 />
+      <SectionBlock4 />
+      <SectionBlock5 />
+      <SectionBlock6 />
     </Section>
   );
 };
