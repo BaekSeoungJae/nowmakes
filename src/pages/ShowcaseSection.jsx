@@ -25,7 +25,7 @@ const ShowcaseSection = ({ toggleTheme }) => {
   return (
     <Section>
       <h2>
-        내가 원하는 홈페이지를 쉽게 만들고 한눈에 완성하세요.
+        원하는 홈페이지를 쉽게 만들고 한눈에 완성하세요.
         <br />
         처음이라도 걱정 없는 간편한 제작 경험,
         <br />
