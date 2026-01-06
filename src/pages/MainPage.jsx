@@ -75,37 +75,36 @@ const MainPage = ({ toggleTheme }) => {
   }, []);
 
   return (
-    <></>
-    // <Container>
-    //   <LeftBar $visible={showLeftBar} />
-    //   <MotionCircle
-    //     currentSection={currentSection}
-    //     style={{ opacity: hideCursor ? 0 : 1 }}
-    //   />
-    //   <Header
-    //     currentSection={currentSection}
-    //     sectionRefs={sectionRefs}
-    //     setHideCursor={setHideCursor}
-    //   />
-    //   <MainWrapper>
-    //     <section id="hero" ref={sectionRefs.hero}>
-    //       <HeroSection setHideCursor={setHideCursor} />
-    //     </section>
-    //     <section id="about" ref={sectionRefs.about}>
-    //       <AboutSection />
-    //     </section>
-    //     <section id="showcase" ref={sectionRefs.showcase}>
-    //       <ShowcaseSection toggleTheme={toggleTheme} />
-    //     </section>
-    //     <section id="sample" ref={sectionRefs.sample}>
-    //       <SampleSection />
-    //     </section>
-    //     <section id="info" ref={sectionRefs.info}>
-    //       <InfoSection />
-    //     </section>
-    //     <Footer />
-    //   </MainWrapper>
-    // </Container>
+    <Container>
+      <LeftBar $visible={showLeftBar} />
+      <MotionCircle
+        currentSection={currentSection}
+        style={{ opacity: hideCursor ? 0 : 1 }}
+      />
+      <Header
+        currentSection={currentSection}
+        sectionRefs={sectionRefs}
+        setHideCursor={setHideCursor}
+      />
+      <MainWrapper>
+        <section id="hero" ref={sectionRefs.hero}>
+          <HeroSection setHideCursor={setHideCursor} />
+        </section>
+        {/* <section id="about" ref={sectionRefs.about}>
+          <AboutSection />
+        </section> */}
+        {/* <section id="showcase" ref={sectionRefs.showcase}>
+          <ShowcaseSection toggleTheme={toggleTheme} />
+        </section> */}
+        <section id="sample" ref={sectionRefs.sample}>
+          <SampleSection />
+        </section>
+        <section id="info" ref={sectionRefs.info}>
+          <InfoSection />
+        </section>
+        <Footer />
+      </MainWrapper>
+    </Container>
   );
 };
 

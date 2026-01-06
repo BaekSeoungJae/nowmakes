@@ -19,7 +19,7 @@ const Heading = styled.h2`
 const SampleSection = () => {
   return (
     <Section>
-      <Heading>Sample Works</Heading>
+      <Heading>Sample</Heading>
     </Section>
   );
 };
